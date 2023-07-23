@@ -11,11 +11,12 @@ const color = document.querySelector(".color");
 const span = document.querySelectorAll("span");
 let currentNumber = '';
 let firstNumber = null;
+let screenResult = '';
 let operator = null;
 let previusOperation = null;
 
 function updateScreen() {
-    text.innerHTML = currentNumber;
+    text.innerHTML =  currentNumber ;
   }
 
 
@@ -29,6 +30,16 @@ function updateScreen() {
     }
     updateScreen();
   }
+
+  function onOperatorClick(key){
+
+    firstNumber = currentNumber;
+    currentNumber = "";
+    operator = key;
+    
+
+  }
+  
 
   function resetScreen(){
     text.innerHTML = "0";
@@ -55,12 +66,11 @@ function updateScreen() {
         result = num1 / num2;
         break;
     }
-    previusOperation = firstNumber + operator + currentNumber;
+    previusOperation = firstNumber + operator + currentNumber + "=";
     above_text.innerHTML = previusOperation;
     currentNumber = result.toString();
-    currentNumber = "=" + currentNumber;
-    firstNumber = null;
-    operator = null;
+    currentNumber =  currentNumber;
+    
     updateScreen();
   }
 
@@ -173,14 +183,7 @@ let array2 = ["body" , "screen" , "number" , "color" , "theme" ];
     }
   });
 
-  function onOperatorClick(key){
 
-    firstNumber = currentNumber;
-    currentNumber = "";
-    operator = key;
-
-  }
-  
   // Attach click event listeners to number buttons
   document.getElementById('0').addEventListener('click', () => onNumberClick(0));
   document.getElementById('1').addEventListener('click', () => onNumberClick(1));

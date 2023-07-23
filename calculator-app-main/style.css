@@ -117,7 +117,7 @@ h1{
 .number-grid{
     display: grid;
     grid-template-columns: repeat(4 , 1fr);
-    grid-gap: 15px;
+    grid-gap: 20px;
     grid-column: 2 / -2;
     grid-row: 2 / -2;
 }
@@ -220,6 +220,8 @@ opacity: 0.7;
  span:focus{
     background-color: #ffffff;
  }
+
+ 
 
 .accent{
     background-color: #647299;
